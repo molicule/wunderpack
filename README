@@ -1,6 +1,8 @@
 h1. wunderpack v0.0.1
 
-    wunderpack is a mozilla jetpack that house multiple jetpacks.
+    wunderpack is a mozilla jetpack that houses multiple jetpacks.
     It allows for other bits of functionality such as per-page jetpacks,
-    xhtp loading of jetpacks etc.
+    $.get() loading of jetpacks etc.
+
+    Head on over to http://molicule.github.com/wunderpack for installation
 
