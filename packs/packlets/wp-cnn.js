@@ -6,10 +6,13 @@ jetpack.tabs.onReady(function(d) {
             var button = $(d).find("#wpcnnbutton").length;
             if (button >0) {
             } else {
+                if (this.url.indexOf("about:blank") != -1) { return; }
                 $(d).find("#wunderpack").append("<div id='wpcnnbutton' class='wunderpackbutton'>cnn</div>");
                 $(d).find("#wpcnnbutton").click(function() {
                     jetpack.notifications.show("from wunderpacklet wp-cnn");
                 });
+                var raw = this.raw;
+                $(raw).trigger("wunderpacklist", ["wp-cnn"]); 
             }
         }
     }

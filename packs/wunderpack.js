@@ -16,6 +16,27 @@ jetpack.tabs.onReady(function(d) {
     if (pped >0) {
         // do nothing
     } else {
+        if (this.url.indexOf("about:blank") != -1) { return; }
+
+        var wunderpacklist = new Array();
+
+        var raw = this.raw;
+        $(raw).bind("wunderpacklist", function(e, name) {
+            var randomnumber=Math.floor(Math.random()*11)
+            var inlist = false;
+            for (var i=0; i<wunderpacklist.length; i++) {
+                if (name == wunderpacklist[i]) {
+                    inlist = true;
+                    break;
+                }
+            }
+            if (inlist) {
+                // check why this happens twice
+            } else {
+                wunderpacklist.push(name);
+            }
+        });
+
         var csstxt = "";
         csstxt = csstxt + "div#wunderpack,\n";
         csstxt = csstxt + "div#wunderpack div,\n";
@@ -45,9 +66,11 @@ jetpack.tabs.onReady(function(d) {
         $(d).find("head").append("<style type='text/css'>"+csstxt+"</style>");
         txt = "<div id='wunderpack' style='position:absolute;right:0px;bottom:0px;padding:5px;border:1px solid red;background-color:#ffffff;z-index:99999;display:none'>";
         txt = txt + "<div id='wunderpackhide' class='wunderpackbutton'>"+logo+"</div> ";
+        txt = txt + "<div id='wunderpacklist' class='wunderpackbutton'>?</div> ";
         txt = txt + "</div>";
         $(d).find("body").append(txt);
         $(d).find("#wunderpackhide").click(function() { $(d).find("#wunderpack").hide(); });
+        $(d).find("#wunderpacklist").click(function() { jetpack.notifications.show(wunderpacklist.length + "  " + wunderpacklist.join(", ")); });
     }
 
 });

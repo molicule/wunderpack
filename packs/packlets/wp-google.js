@@ -7,10 +7,13 @@ jetpack.tabs.onReady(function(d) {
             var button = $(d).find("#wpgooglebutton").length;
             if (button >0) {
             } else {
+            if (this.url.indexOf("about:blank") != -1) { return; }
                 $(d).find("#wunderpack").append("<div id='wpgooglebutton' class='wunderpackbutton'>google</div>");
                 $(d).find("#wpgooglebutton").click(function() {
                     jetpack.notifications.show("from wunderpacklet wp-google");
                 });
+                var raw = this.raw;
+                $(raw).trigger("wunderpacklist", ["wp-google"]); 
             }
         }
     }
