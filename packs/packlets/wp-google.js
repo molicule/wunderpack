@@ -7,7 +7,7 @@ jetpack.tabs.onReady(function(d) {
             var button = $(d).find("#wpgooglebutton").length;
             if (button >0) {
             } else {
-                $(d).find("#wunderpack").append("<div id='wpgooglebutton' class='wunderpackbutton'>wp-x</div>");
+                $(d).find("#wunderpack").append("<div id='wpgooglebutton' class='wunderpackbutton'>google</div>");
                 $(d).find("#wpgooglebutton").click(function() {
                     jetpack.notifications.show("from wunderpacklet wp-google");
                 });
