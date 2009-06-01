@@ -41,7 +41,7 @@ jetpack.tabs.onReady(function(d) {
                 element.dispatchEvent(evt);
                 var channeldata = element.getAttribute("channeldata");
                 send2delicious(channeldata);
-                // jetpack.notifications.show("from wunderpacklet "+name+" " + channeldata);
+                element.setAttribute("channeldata", "");
             });
 
             $(raw).trigger("wunderpacklist", [name]); 
