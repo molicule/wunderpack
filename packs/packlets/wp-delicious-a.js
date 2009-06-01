@@ -17,6 +17,8 @@ etxt = etxt + "    return txt;\n";
 etxt = etxt + "},\n";
 etxt = etxt + "init: function() {"+name+"_pack.channeldata = "+name+"_pack.mygetpass(); }";
 
+var dataicon = "data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%10%00%00%00%10%08%06%00%00%00%1F%F3%FFa%00%00%00%B1IDATx%DAc%F8O%00%18%95%5C%C0%8B%19F%0D%18%16%06%00%C1%7F%7C%F8%F2%A5Kx1%D1%06%5C%3Bt%E8%FF%7Bg%E7%FF_%B4%B5%FF%7FSP%F8%FF%CE%C3%834%03%5E%A4%A6%FE%7FR%5B%0B%E7%83%0C%BB%3Fe%0Ay%5E%B8%B1c%C7%FF%D7%D1%D1%FF%1Fvw%13o%C0%AD%D5%AB%FF%7F%B4%B6%FE%FFCR%12l%FB%EB%A8(%D2%0C%F8dj%FA%FFA_%1F%9C%FF%268%F8%FF%C3%AE.%E2%0D%F8%A6%AC%FC%FF%CE%C2%85%60%F6%CDM%9B%FE%FF%14%12%FA%FF%A8%AD%8Dx%03%9ETW%FF%FF)%2C%FC%FF%A3%9D%DD%FF%F7nn%FF%1F%D7%D7%FF%7F%91%9E%FE%1F%00%1C\'%9F%C6%EB%E3b%20%00%00%00%00IEND%AEB%60%82";
+
 
 jetpack.tabs.onReady(function(d) {
     var pped = $(d).find("#wunderpack").length;
@@ -26,7 +28,7 @@ jetpack.tabs.onReady(function(d) {
         } else {
         var raw = this.raw;
         if (this.url.indexOf("about:blank") != -1) { return; }
-            $(d).find("#wunderpack").append("<div id='wppassbutton_a' class='wunderpackbutton'>"+name+"</div>");
+            $(d).find("#wunderpack").append("<div id='wppassbutton_a' class='wunderpackbutton'><img src='"+dataicon+"'></div>");
             var document = d;
             var magic = $(raw).attr("wunderpassMagic")
             var element = document.createElement("MyElement_a");
